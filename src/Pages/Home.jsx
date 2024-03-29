@@ -5,10 +5,12 @@ import HighlightText from "../Components/HighlightText";
 import CustomButton from "../Components/CustomButton";
 import Banner from "../assets/Images/banner.mp4";
 import CodeBlocks from "./Components/CodeBlocks";
+import Timeline from "./Components/Timeline";
+import LearningLanguage from "./Components/LearningLanguage";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       {/* section 1 */}
       <div className="mx-auto flex flex-col w-10/12 items-center text-white justify-between">
         <Link to={"/signup"}>
@@ -73,7 +75,6 @@ export default function Home() {
             />
           </div>
 
-          
           <div className="lower mt-16">
             <CodeBlocks
               heading={
@@ -97,10 +98,43 @@ export default function Home() {
             />
           </div>
         </div>
-
-        {/* section 3 */}
-        {/* footer */}
       </div>
+
+      {/* section 3 */}
+      <div className="bg-pure-greys-5 text-richblack-700">
+        <div className="w-10/12 mx-auto">
+          <div className="bg-image-button h-[300px]">
+            <div className=" h-[inherit] flex justify-center max-sm:flex-col max-sm:gap-6 items-center gap-3">
+              <CustomButton linkTo={""}>
+                Explore Full Catalog <FaArrowTrendUp />
+              </CustomButton>
+              <CustomButton active={false} linkTo={""} label={"Learn More"} />
+            </div>
+          </div>
+          <div className="flex max-sm:flex-col mt-10 gap-6 h-max">
+            <div className="w-[50%] text-4xl font-semibold max-sm:w-[100%] max-sm:text-center">
+              Get the skills you need for a {' '}
+              <HighlightText text={"Job that is in demand"} />
+            </div>
+            <div className="w-[50%] max-sm:w-[100%] max-sm:text-center">
+              <p>
+                The modern StudyNotion is the dictates its own terms. Today, to
+                be a competitive specialist requires more than professional
+                skills.
+              </p>
+              <br />
+              <br className="max-sm:hidden" />
+              <CustomButton label={"Learn More"} linkTo={""} />
+              <div>&nbsp;</div>
+            </div>
+          </div>
+          {/* //section 3 timeline and learningLanguage */}
+          <Timeline/>
+          <LearningLanguage/>
+
+        </div>
+      </div>
+      {/* footer */}
     </div>
   );
 }
