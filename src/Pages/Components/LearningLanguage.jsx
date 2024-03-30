@@ -8,7 +8,7 @@ import CustomButton from "../../Components/CustomButton";
 export default function LearningLanguage() {
   return (
     <div>
-      <div className="my-20">
+      <div className="py-16">
         <div className="text-3xl font-semibold text-center">
           Your swiss knife for <HighlightText text={"learning any language"} />
         </div>

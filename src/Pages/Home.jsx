@@ -6,12 +6,40 @@ import CustomButton from "../Components/CustomButton";
 import Banner from "../assets/Images/banner.mp4";
 import CodeBlocks from "./Components/CodeBlocks";
 import Timeline from "./Components/Timeline";
+import instructorImage from "../assets/Images/Instructor.png";
 import LearningLanguage from "./Components/LearningLanguage";
+import Review from "./Components/Review";
 
 export default function Home() {
-  const codeBlockText = `<!DOCTYPE html>\n<html>\nhead><>Example</\ntitle><linkrel="stylesheet"\nhref="styles.css">\n/head>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</\na><ahref="two/">Two</a><ahref=\n"three/">Three\n</a>nav>`;
+  const codeBlockText = `<!DOCTYPE html>\n<html>\nhead><>Example</\ntitle><linkrel="stylesheet"\nhref="styles.css">\n/head>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</\na><ahref="two/">Two</a>\n<ahref="three">\nThree</a>nav>`;
+  const reviews = [
+    {
+      name: "Himanshu Dubey",
+      email: "avanishpandey022@gmail.com",
+      review: "Coordingly of activities  ",
+      stars: 4,
+    },
+    {
+      name: "Shivam Dubey",
+      email: "avanishpandey022@gmail.com",
+      review: "Coordingly of activities  ",
+      stars: 5,
+    },
+    {
+      name: "Shivam Dubey",
+      email: "avanishpandey022@gmail.com",
+      review: "Nice ",
+      stars: 5,
+    },
+    {
+      name: "Shivam Singh",
+      email: "avanishpandey022@gmail.com",
+      review: "Coordingly of activities  ",
+      stars: 3,
+    },
+  ];
   return (
-    <div className="">
+    <div className="max-w-[1326px] mx-auto">
       {/* section 1 */}
       <div className="mx-auto flex flex-col w-10/12 items-center text-white justify-between">
         <Link to={"/signup"}>
@@ -114,7 +142,7 @@ export default function Home() {
           </div>
           <div className="flex max-sm:flex-col mt-10 gap-6 h-max">
             <div className="w-[50%] text-4xl font-semibold max-sm:w-[100%] max-sm:text-center">
-              Get the skills you need for a {' '}
+              Get the skills you need for a{" "}
               <HighlightText text={"Job that is in demand"} />
             </div>
             <div className="w-[50%] max-sm:w-[100%] max-sm:text-center">
@@ -130,10 +158,38 @@ export default function Home() {
             </div>
           </div>
           {/* //section 3 timeline and learningLanguage */}
-          <Timeline/>
-          <LearningLanguage/>
-
+          <Timeline />
+          <LearningLanguage />
         </div>
+      </div>
+      {/* instructor  */}
+      <div className="become-instructor w-10/12 mx-auto pt-6">
+        <div className="flex gap-6 max-md:flex-col py-6 px-4 max-md:outline outline-1 outline-richblue-200 rounded-lg">
+          <div className="left-image w-[50%] max-md:w-[100%] flex justify-center items-center">
+            <img src={instructorImage} alt="instructor" />
+          </div>
+          <div className=" w-[50%] max-md:w-[100%]">
+            <div className="mx-14 max-md:mx-0 h-[100%] flex flex-col justify-center">
+              <div className="right-text text-white flex flex-col text-left justify-center font-semibold text-4xl">
+                Become an <HighlightText text={"Instructor"} />
+              </div>
+              <div className="text-xs font-thin text-white py-3">
+                Instructors from around the world teach millions of students on
+                StudyNotion. We provide the tools and skills to teach what you
+                love.
+              </div>
+              <div className="button w-fit py-4">
+                <CustomButton>
+                  Start Teaching Today <FaArrowTrendUp />
+                </CustomButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* review  */}
+      <div className="review w-10/12 mx-auto">
+        <Review reviews={reviews} />
       </div>
       {/* footer */}
     </div>

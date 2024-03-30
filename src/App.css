@@ -1,3 +1,7 @@
 .bg-image-button{
     background: url("./assets//Images//bghome.svg");
 } 
+.review-img{
+    background: url('./assets/Images/signup.webp');
+    background-size: cover;
+}
