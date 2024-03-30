@@ -9,6 +9,7 @@ import Timeline from "./Components/Timeline";
 import LearningLanguage from "./Components/LearningLanguage";
 
 export default function Home() {
+  const codeBlockText = `<!DOCTYPE html>\n<html>\nhead><>Example</\ntitle><linkrel="stylesheet"\nhref="styles.css">\n/head>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</\na><ahref="two/">Two</a><ahref=\n"three/">Three\n</a>nav>`;
   return (
     <div className="">
       {/* section 1 */}
@@ -70,7 +71,7 @@ export default function Home() {
                 linkTo: "/login",
                 active: false,
               }}
-              codeBlock={`<!DOCTYPE html>\n<html>\nhead><>Example</\ntitle><linkrel="stylesheet"href="styles.css">\n/head>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</\na><ahref="two/">Two</a><ahref="three/">Three\n</a>nav>`}
+              codeBlock={codeBlockText}
               codeColor={"text-yellow-25"}
             />
           </div>
@@ -92,7 +93,7 @@ export default function Home() {
                 linkTo: "/login",
                 active: false,
               }}
-              codeBlock={`<!DOCTYPE html>\n<html>\nhead><>Example</\ntitle><linkrel="stylesheet"href="styles.css">\n/head>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</\na><ahref="two/">Two</a><ahref="three/">Three\n</a>nav>`}
+              codeBlock={codeBlockText}
               codeColor={"text-yellow-25"}
               position={"flex-row-reverse"}
             />
