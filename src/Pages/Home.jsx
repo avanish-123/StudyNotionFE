@@ -9,6 +9,7 @@ import Timeline from "./Components/Timeline";
 import instructorImage from "../assets/Images/Instructor.png";
 import LearningLanguage from "./Components/LearningLanguage";
 import Review from "./Components/Review";
+import ToogleCards from "./Components/ToogleCards";
 
 export default function Home() {
   const codeBlockText = `<!DOCTYPE html>\n<html>\nhead><>Example</\ntitle><linkrel="stylesheet"\nhref="styles.css">\n/head>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</\na><ahref="two/">Two</a>\n<ahref="three">\nThree</a>nav>`;
@@ -68,7 +69,7 @@ export default function Home() {
           <CustomButton linkTo={"/signup"} label={"Learn More"} />
           <CustomButton active={false} label={"Book a demo"} />
         </div>
-        <div className="video shadow-lg my-12 mx-3 ">
+        <div className="video my-12 mx-3 ">
           <video
             muted
             loop
@@ -127,6 +128,10 @@ export default function Home() {
             />
           </div>
         </div>
+      </div>
+      {/* toogle cards */}
+      <div className="w-10/12 mx-auto">
+        <ToogleCards />
       </div>
 
       {/* section 3 */}
