@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 
 export default function Tab(props) {
-  const { HomePageExplore, onclickOnTab } = props;
-  const [currentTab, setCurrentTab] = useState(HomePageExplore[0].name);
+  const { data, selectedValue } = props;
+  const [currentTab, setCurrentTab] = useState(data[0].name);
   const setTab = (element) => {
     setCurrentTab(element.name);
-    onclickOnTab(element);
+    selectedValue(element);
   };
   return (
-  <div className="">
-      <div className="flex gap-2 px-2 py-1 rounded-full bg-richblack-800 border border-richblack-100">
-        {HomePageExplore.map((element, index) => (
+      <div className="flex gap-2 px-2 py-1 w-max rounded-full bg-richblack-800 border border-richblack-100">
+        {data.map((element, index) => (
           <div
             key={index}
             onClick={() => setTab(element)}
@@ -25,6 +24,5 @@ export default function Tab(props) {
           </div>
         ))}
       </div>
-    </div>
   );
 }

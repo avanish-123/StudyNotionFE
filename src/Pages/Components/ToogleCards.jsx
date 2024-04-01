@@ -17,8 +17,8 @@ export default function ToogleCards() {
         </div>
         <div className="">
             <Tab
-            onclickOnTab={(element) => setCard(element.courses)}
-            HomePageExplore={HomePageExplore}
+            selectedValue={(element) => setCard(element.courses)}
+            data={HomePageExplore}
             />
         </div>
         <div className="flex gap-6 flex-wrap max-md:justify-center pt-4 pb-10">
