@@ -7,7 +7,7 @@ export default function Signin() {
   return (
     <div className="text-white w-10/12 mx-auto">
       <div className="flex flex-row-reverse p-2 gap-2 max-md:flex-col-reverse">
-        <div className="w-[50%] p-6 max-md:w-[100%] flex justify-center items-center">
+        <div className="w-[50%] p-6 max-md:w-[100%] flex justify-center items-center max-sm:hidden">
           <div className="image relative">
             <img className="" src={frame} alt="" />
             <img src={LoginImage} alt="signupImage" className="absolute bottom-5 right-5" />

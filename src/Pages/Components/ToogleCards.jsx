@@ -15,7 +15,7 @@ export default function ToogleCards() {
         <div className="text-richblack-300 text-sm">
           Learn to Build Anything You Can Imagine
         </div>
-        <div className="">
+        <div className="pt-4">
             <Tab
             selectedValue={(element) => setCard(element.courses)}
             data={HomePageExplore}

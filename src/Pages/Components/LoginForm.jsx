@@ -9,6 +9,7 @@ import CustomButton from "../../Components/CustomButton";
 export default function LoginForm() {
   const [userLoginType, setUserLoginType] = useState(userType[0]);
   const [state, setState] = useState({ email: "", password: "", userType: "" });
+  const Navigate = useNavigate();
   function onChangeHandler(field = "", value = "") {
     setState({
       ...state,
@@ -16,10 +17,10 @@ export default function LoginForm() {
     });
   }
   function onSubmitHandler() {
-    state.userType=userLoginType.value
-    console.log(state)
+    state.userType = userLoginType.value;
+    console.log(state);
   }
-  const Navigate = useNavigate();
+  const disabled = !state.email || !state.password;
   return (
     <div>
       <div className="p-2">
@@ -30,7 +31,10 @@ export default function LoginForm() {
         </div>
         <div className="form py-4">
           <div className="tab">
-            <Tab data={userType} selectedValue={(element)=>setUserLoginType(element)} />
+            <Tab
+              data={userType}
+              selectedValue={(element) => setUserLoginType(element)}
+            />
           </div>
           <div className="py-6">
             <TextField
@@ -56,6 +60,7 @@ export default function LoginForm() {
           </div>
           <div className="py-6">
             <CustomButton
+              disabled={disabled}
               onclick={onSubmitHandler}
               width={"full"}
               label={"Signin"}
@@ -63,7 +68,10 @@ export default function LoginForm() {
           </div>
         </div>
         <div className="text-center text-sm">
-          Don't have account? <span className="text-blue-100"><Link to={'/signup'}>Signup</Link></span>
+          Don't have account?{" "}
+          <span className="text-blue-100">
+            <Link to={"/signup"}>Signup</Link>
+          </span>
         </div>
       </div>
     </div>

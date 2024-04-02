@@ -14,7 +14,7 @@ export default function SignupForm() {
     email: "",
     createPassword: "",
     confirmPassword: "",
-    userType: userType[0].value
+    userType: userType[0].value,
   });
   function onChangeHandler(field = "", value = null) {
     setState({
@@ -22,11 +22,18 @@ export default function SignupForm() {
       [field]: value.target.value,
     });
   }
-  
+
   function submitHandler() {
-    state.userType=userSignupType
-    console.log(state)
+    state.userType = userSignupType;
+    console.log(state);
   }
+  const disabled =
+    !state.firstName ||
+    !state.lastName ||
+    !state.email ||
+    !state.createPassword ||
+    !state.confirmPassword ||
+    state.createPassword !== state.confirmPassword;
   return (
     <div>
       <div className="p-2">
@@ -40,13 +47,16 @@ export default function SignupForm() {
         </div>
         <div className="form py-4">
           <div className="tab">
-            <Tab data={userType} selectedValue={(element)=> setUserSignupType(element)} />
+            <Tab
+              data={userType}
+              selectedValue={(element) => setUserSignupType(element)}
+            />
           </div>
           <div className="first-last-name gap-3 flex max-md:flex-col py-6">
             <div className="w-[50%] max-md:w-full">
               <TextField
                 value={state.firstName}
-                onChangeHandler={(value)=>onChangeHandler('firstName', value)}
+                onChangeHandler={(value) => onChangeHandler("firstName", value)}
                 className="w-full"
                 label={"First Name"}
                 required
@@ -56,7 +66,7 @@ export default function SignupForm() {
             <div className="w-[50%] max-md:w-full">
               <TextField
                 value={state.lastName}
-                onChangeHandler={(value)=>onChangeHandler('lastName', value)}
+                onChangeHandler={(value) => onChangeHandler("lastName", value)}
                 label={"Last Name"}
                 required
                 placeholder={"Last Name"}
@@ -66,7 +76,7 @@ export default function SignupForm() {
           <div className="email w-[100%]">
             <TextField
               value={state.email}
-              onChangeHandler={(value)=>onChangeHandler('email', value)}
+              onChangeHandler={(value) => onChangeHandler("email", value)}
               label={"email"}
               fieldType={"email"}
               placeholder={"Last Name"}
@@ -77,7 +87,9 @@ export default function SignupForm() {
             <div className="create-password">
               <TextField
                 value={state.createPassword}
-                onChangeHandler={(value)=>onChangeHandler('createPassword', value)}
+                onChangeHandler={(value) =>
+                  onChangeHandler("createPassword", value)
+                }
                 placeholder={"Create password"}
                 required
                 label={"Create Password"}
@@ -87,7 +99,9 @@ export default function SignupForm() {
             <div className="confirm-password">
               <TextField
                 value={state.confirmPassword}
-                onChangeHandler={(value)=>onChangeHandler('confirmPassword', value)}
+                onChangeHandler={(value) =>
+                  onChangeHandler("confirmPassword", value)
+                }
                 required
                 placeholder={"Confirm Password"}
                 label={"Confirm Password"}
@@ -97,15 +111,19 @@ export default function SignupForm() {
           </div>
           <div className="py-4">
             <CustomButton
+              disabled={disabled}
               onclick={submitHandler}
               width={"full"}
               label={"Signup"}
             />
           </div>
         </div>
-          <div className="text-center text-sm">
-            Already Have Account? <span className="text-blue-100"><Link to={'/login'}>Login</Link></span>
-          </div>
+        <div className="text-center text-sm">
+          Already Have Account?{" "}
+          <span className="text-blue-100">
+            <Link to={"/login"}>Login</Link>
+          </span>
+        </div>
       </div>
     </div>
   );
