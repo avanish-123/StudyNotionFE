@@ -10,7 +10,7 @@ export default function CustomButton(props) {
             ? "bg-yellow-5 text-black "
             : "bg-richblack-800 text-white"
         } rounded-lg text-center text-[13px] ${width==='full'?"":"w-max"} px-6 py-4 font-semibold ${className} ${children?"flex items-center gap-3":""}`}
-        onclick={onclick}
+        onClick={onclick}
       >
         {label?label:children}
       </div>

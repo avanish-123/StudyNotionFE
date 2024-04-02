@@ -2,19 +2,23 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function TextField(props) {
-  const {
+  var {
     placeholder,
     value,
     classname = "",
     fieldType='text',
     required,
     label,
+    disabled=false,
+    onChangeHandler,
+    onBlurHandler
   } = props;
   const [visible, setVisible] = useState(false);
 
   function onVisibleClick() {
     setVisible(!visible);
   }
+
 
   return (
     <div className="w-[100%]">
@@ -24,6 +28,9 @@ export default function TextField(props) {
       </div>
       <div className="relative w-[100%]">
         <input
+          disabled={disabled}
+          onChange={onChangeHandler}
+          onBlur={onBlurHandler}
           value={value}
           placeholder={placeholder}
           type={

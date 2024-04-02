@@ -3,11 +3,22 @@ import HighlightText from "../../Components/HighlightText";
 import Tab from "../../Components/Tab";
 import userType from "../../data/user-type";
 import TextField from "../../Components/TextField";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CustomButton from "../../Components/CustomButton";
 
 export default function LoginForm() {
   const [userLoginType, setUserLoginType] = useState(userType[0]);
+  const [state, setState] = useState({ email: "", password: "", userType: "" });
+  function onChangeHandler(field = "", value = "") {
+    setState({
+      ...state,
+      [field]: value.target.value,
+    });
+  }
+  function onSubmitHandler() {
+    state.userType=userLoginType.value
+    console.log(state)
+  }
   const Navigate = useNavigate();
   return (
     <div>
@@ -19,10 +30,11 @@ export default function LoginForm() {
         </div>
         <div className="form py-4">
           <div className="tab">
-            <Tab data={userType} selectedValue={setUserLoginType} />
+            <Tab data={userType} selectedValue={(element)=>setUserLoginType(element)} />
           </div>
           <div className="py-6">
             <TextField
+              onChangeHandler={(value) => onChangeHandler("email", value)}
               required
               placeholder={"Enter your email address"}
               label={"Email Address"}
@@ -30,6 +42,7 @@ export default function LoginForm() {
           </div>
           <div>
             <TextField
+              onChangeHandler={(value) => onChangeHandler("password", value)}
               label={"Password"}
               placeholder={"Enter your password"}
               required
@@ -42,8 +55,15 @@ export default function LoginForm() {
             </p>
           </div>
           <div className="py-6">
-            <CustomButton onclick={''} width={'full'} label={'Signin'} />
+            <CustomButton
+              onclick={onSubmitHandler}
+              width={"full"}
+              label={"Signin"}
+            />
           </div>
+        </div>
+        <div className="text-center text-sm">
+          Don't have account? <span className="text-blue-100"><Link to={'/signup'}>Signup</Link></span>
         </div>
       </div>
     </div>
