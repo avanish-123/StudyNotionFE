@@ -15,7 +15,7 @@ export default function CustomButton(props) {
       <button
         disabled={disabled}
         className={`${
-          active ? "bg-yellow-5 text-black " : "bg-richblack-800 text-white"
+          active & !disabled ? "bg-yellow-5 text-black " : "bg-richblack-800 text-white"
         } rounded-lg ${
           disabled ? "cursor-not-allowed text-white bg-richblack-500" : ""
         } text-center text-[13px] ${

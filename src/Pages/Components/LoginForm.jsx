@@ -38,6 +38,7 @@ export default function LoginForm() {
           </div>
           <div className="py-6">
             <TextField
+              fieldType={"email"}
               onChangeHandler={(value) => onChangeHandler("email", value)}
               required
               placeholder={"Enter your email address"}
@@ -50,6 +51,7 @@ export default function LoginForm() {
               label={"Password"}
               placeholder={"Enter your password"}
               required
+              fieldType={"password"}
             />
             <p
               onClick={() => Navigate("/forgot-password")}
