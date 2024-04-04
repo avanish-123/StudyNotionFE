@@ -84,7 +84,7 @@ export default function SignupForm() {
             />
           </div>
           <div className="flex max-md:flex-col gap-3 py-6">
-            <div className="create-password">
+            <div className="create-password w-full">
               <TextField
                 value={state.createPassword}
                 onChangeHandler={(value) =>
@@ -96,7 +96,7 @@ export default function SignupForm() {
                 fieldType={"password"}
               />
             </div>
-            <div className="confirm-password">
+            <div className="confirm-password w-full">
               <TextField
                 value={state.confirmPassword}
                 onChangeHandler={(value) =>

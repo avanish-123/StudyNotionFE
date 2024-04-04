@@ -42,9 +42,9 @@ export default function Home() {
   return (
     <div className="max-w-[1326px] mx-auto">
       {/* section 1 */}
-      <div className="mx-auto flex flex-col w-10/12 items-center text-white justify-between">
+      <div className="mx-auto flex flex-col w-11/12 items-center text-white justify-between">
         <Link to={"/signup"}>
-          <div className="mx-auto mt-16 p-1 rounded-full bg-richblack-800 font-bold text-richblack-200 transition-all duration-200 hover:scale-95 group">
+          <div className="mx-auto mt-12 p-1 rounded-full bg-richblack-800 font-bold text-richblack-200 transition-all duration-200 hover:scale-95 group">
             <div className="flex gap-4 items-center rounded-full px-10 py-[5px] transition-all duration-200 group-hover:bg-richblack-900">
               <p>Become an instructor</p>
               <FaArrowTrendUp />
@@ -130,13 +130,13 @@ export default function Home() {
         </div>
       </div>
       {/* toogle cards */}
-      <div className="w-10/12 mx-auto">
+      <div className="w-11/12 mx-auto">
         <ToogleCards />
       </div>
 
       {/* section 3 */}
       <div className="bg-pure-greys-5 text-richblack-700">
-        <div className="w-10/12 mx-auto">
+        <div className="w-11/12 mx-auto">
           <div className="bg-image-button h-[300px]">
             <div className=" h-[inherit] flex justify-center max-sm:flex-col max-sm:gap-6 items-center gap-3">
               <CustomButton linkTo={""}>
@@ -168,7 +168,7 @@ export default function Home() {
         </div>
       </div>
       {/* instructor  */}
-      <div className="become-instructor w-10/12 mx-auto pt-6">
+      <div className="become-instructor w-11/12 mx-auto pt-6">
         <div className="flex gap-6 max-md:flex-col py-6 px-4 max-md:outline outline-1 outline-richblue-200 rounded-lg">
           <div className="left-image w-[50%] max-md:w-[100%] flex justify-center items-center">
             <img src={instructorImage} alt="instructor" />
@@ -193,7 +193,7 @@ export default function Home() {
         </div>
       </div>
       {/* review  */}
-      <div className="review w-10/12 mx-auto">
+      <div className="review w-11/12 mx-auto">
         <Review reviews={reviews} />
       </div>
       {/* footer */}

@@ -5,6 +5,7 @@ export const NavbarLinks = [
   },
   {
     title: "Catalog",
+    hasDropDown:true
     // path: '/catalog',
   },
   {
