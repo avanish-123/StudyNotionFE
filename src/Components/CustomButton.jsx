@@ -22,7 +22,7 @@ export default function CustomButton(props) {
           width === "full" ? "w-full" : "w-max"
         } px-6 py-4 font-semibold ${className} ${
           children ? "flex items-center gap-3" : ""
-        }`}
+        } shadow-[2px_2px] ${active?"shadow-richblack-25":"shadow-richblack-600"}  hover:shadow-none transition-all duration-100`}
         onClick={onclick}
       >
         {label ? label : children}
