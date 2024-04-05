@@ -6,10 +6,10 @@ import CustomButton from "../Components/CustomButton";
 import Banner from "../assets/Images/banner.mp4";
 import CodeBlocks from "./Components/CodeBlocks";
 import Timeline from "./Components/Timeline";
-import instructorImage from "../assets/Images/Instructor.png";
 import LearningLanguage from "./Components/LearningLanguage";
 import Review from "./Components/Review";
 import ToogleCards from "./Components/ToogleCards";
+import Instructor from "./Components/Instructor";
 
 export default function Home() {
   const codeBlockText = `<!DOCTYPE html>\n<html>\nhead><>Example</\ntitle><linkrel="stylesheet"\nhref="styles.css">\n/head>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</\na><ahref="two/">Two</a>\n<ahref="three">\nThree</a>nav>`;
@@ -40,7 +40,7 @@ export default function Home() {
     },
   ];
   return (
-    <div className="max-w-[1326px] mx-auto">
+    <div className="max-w-[1400px] mx-auto">
       {/* section 1 */}
       <div className="mx-auto flex flex-col w-11/12 items-center text-white justify-between">
         <Link to={"/signup"}>
@@ -135,7 +135,7 @@ export default function Home() {
       </div>
 
       {/* section 3 */}
-      <div className="bg-pure-greys-5 text-richblack-700">
+      <div className="bg-pure-greys-5 text-richblack-700 w-full">
         <div className="w-11/12 mx-auto">
           <div className="bg-image-button h-[300px]">
             <div className=" h-[inherit] flex justify-center max-sm:flex-col max-sm:gap-6 items-center gap-3">
@@ -169,30 +169,7 @@ export default function Home() {
         </div>
       </div>
       {/* instructor  */}
-      <div className="become-instructor w-11/12 mx-auto pt-6">
-        <div className="flex gap-6 max-md:flex-col py-6 px-4 max-md:outline outline-1 outline-richblue-200 rounded-lg">
-          <div className="left-image w-[50%] max-md:w-[100%] flex justify-center items-center">
-            <img src={instructorImage} alt="instructor" />
-          </div>
-          <div className=" w-[50%] max-md:w-[100%]">
-            <div className="mx-14 max-md:mx-0 h-[100%] flex flex-col justify-center">
-              <div className="right-text text-white flex flex-col text-left justify-center font-semibold text-4xl">
-                Become an <HighlightText text={"Instructor"} />
-              </div>
-              <div className="text-xs font-thin text-white py-3">
-                Instructors from around the world teach millions of students on
-                StudyNotion. We provide the tools and skills to teach what you
-                love.
-              </div>
-              <div className="button w-fit py-4">
-                <CustomButton>
-                  Start Teaching Today <FaArrowTrendUp />
-                </CustomButton>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <Instructor />
       {/* review  */}
       <div className="review w-11/12 mx-auto">
         <Review reviews={reviews} />
