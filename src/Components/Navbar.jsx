@@ -20,7 +20,7 @@ export const Navbar = () => {
         <div className="text-white flex items-center justify-center max-sm:hidden">
           <ul className="flex items-center justify-center gap-4 text-sm">
             {NavbarLinks.map((element, index) => (
-              <li key={index} className="flex gap-[2px]">
+              <li key={index} className="flex gap-[2px] cursor-pointer">
                 {element.title}
                 {element.hasDropDown ? (
                   <div className="flex items-center">
