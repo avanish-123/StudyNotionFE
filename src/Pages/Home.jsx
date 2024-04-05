@@ -158,8 +158,9 @@ export default function Home() {
               </p>
               <br />
               <br className="max-sm:hidden" />
-              <CustomButton label={"Learn More"} linkTo={""} />
-              <div>&nbsp;</div>
+              <div className="w-min">
+                <CustomButton label={"Learn More"} linkTo={""} />
+              </div>
             </div>
           </div>
           {/* //section 3 timeline and learningLanguage */}
