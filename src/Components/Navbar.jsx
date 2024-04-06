@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/Logo/Logo-Full-Light.png";
 import smallLogo from "../assets/Logo/Logo-Small-Light.png";
 import AuthButton from "./AuthButton";
@@ -9,6 +9,22 @@ import SubMenu from "./SubMenu";
 
 export const Navbar = () => {
   const navigate = useNavigate();
+  const [visible, setVisible] = useState(false);
+  function navbarClickHandler (element) {
+    if(!Object.keys(element).includes('hasDropDown')){
+      navigate(`${element.path}`)
+    }
+  }
+  function navSubManuMouseEnter(element){
+    if(Object.keys(element).includes('hasDropDown')){
+      setVisible(true)
+    }
+  }
+  function navSubManuMouseLeave(element){
+    if(Object.keys(element).includes('hasDropDown')){
+      setVisible(false)
+    }
+  }
 
   return (
     <div className="border-b-[1px] border-b-richblack-400 h-12 w-full fixed bg-richblack-900 z-[100]">
@@ -23,8 +39,11 @@ export const Navbar = () => {
           <ul className="flex items-center justify-center gap-4 text-sm">
             {NavbarLinks.map((ele, index) => (
               <li
+                onClick={()=>navbarClickHandler(ele)}
+                onMouseEnter={()=>navSubManuMouseEnter(ele)}
+                onMouseLeave={()=>navSubManuMouseLeave(ele)}
                 key={index}
-                className="flex gap-[2px] cursor-pointer relative"
+                className="flex gap-[2px] py-2 cursor-pointer relative"
               >
                 {ele.title}
                 {ele.hasDropDown ? (
@@ -37,6 +56,9 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
+          <div className="absolute top-14 left-[35rem]">
+            <SubMenu data={""} visible={visible} setVisible={setVisible} />
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <AuthButton
@@ -49,8 +71,6 @@ export const Navbar = () => {
           ></AuthButton>
         </div>
       </div>
-
-      {<SubMenu data={""} />}
     </div>
   );
 };
