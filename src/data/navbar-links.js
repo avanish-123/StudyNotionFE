@@ -2,6 +2,7 @@ export const NavbarLinks = [
   {
     title: "Home",
     path: "/",
+    hasDropDown:false
   },
   {
     title: "Catalog",
@@ -10,10 +11,12 @@ export const NavbarLinks = [
   },
   {
     title: "About Us",
+    hasDropDown:false,
     path: "/about",
   },
   {
     title: "Contact Us",
     path: "/contact",
+    hasDropDown:false
   },
 ];
