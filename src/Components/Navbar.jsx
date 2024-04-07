@@ -21,9 +21,7 @@ export const Navbar = () => {
     }
   }
   function navSubManuMouseLeave(element){
-    if(Object.keys(element).includes('hasDropDown')){
       setVisible(false)
-    }
   }
 
   return (
@@ -36,12 +34,11 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="text-white flex items-center justify-center max-sm:hidden">
-          <ul className="flex items-center justify-center gap-4 text-sm">
+          <ul onMouseLeave={()=>navSubManuMouseLeave()} className="flex items-center justify-center gap-4 text-sm">
             {NavbarLinks.map((ele, index) => (
               <li
                 onClick={()=>navbarClickHandler(ele)}
                 onMouseEnter={()=>navSubManuMouseEnter(ele)}
-                onMouseLeave={()=>navSubManuMouseLeave(ele)}
                 key={index}
                 className="flex gap-[2px] py-2 cursor-pointer relative"
               >
@@ -55,10 +52,10 @@ export const Navbar = () => {
                 )}
               </li>
             ))}
+                  <div className="absolute top-14 left-[35rem]">
+                    <SubMenu data={""} visible={visible} setVisible={setVisible} />
+                  </div>
           </ul>
-          <div className="absolute top-14 left-[35rem]">
-            <SubMenu data={""} visible={visible} setVisible={setVisible} />
-          </div>
         </div>
         <div className="flex items-center gap-2">
           <AuthButton
