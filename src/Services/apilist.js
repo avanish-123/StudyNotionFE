@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const API_URL = process.env.REACT_APP_API_URL
 export const category= {
-    CATEGORY_API: BASE_URL + 'getallcategories'
+    CATEGORY_API: `${API_URL}getallcategories`
 }
