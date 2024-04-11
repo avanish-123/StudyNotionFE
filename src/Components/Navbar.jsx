@@ -21,6 +21,7 @@ export const Navbar = () => {
   const [courseCategories, setCourseCategories] = useState([]);
   const [hamburgerOpened, setHamburgerOpened] = useState(false);
   const { token } = useSelector((state) => state.auth);
+  // const token = true;
   function navbarClickHandler(element) {
     if (!Object.keys(element).includes("hasDropDown")) {
       navigate(`${element.path}`);
@@ -37,6 +38,8 @@ export const Navbar = () => {
       console.log(result.data);
       if (result?.data?.success === true) {
         setCourseCategories(result.data.data);
+      }else{
+        toast.error(result?.data?.message);
       }
     } catch (error) {
       toast.error(error.message);
