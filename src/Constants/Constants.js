@@ -1,21 +1,27 @@
 export const hamburgerDropDown = [
   {
     name: "Home",
+    path:"/"
   },
   {
     name: "Catalog",
+    path:"/catalog"
   },
   {
     name: "About Us",
+    path: "/about",
   },
   {
     name: "Contact Us",
+    path: "/contact",
   },
   {
-    "name":"Login"
+    "name":"Login",
+    path:"/login"
   },
   {
-    "name":"Signup"
+    "name":"Signup",
+    path:"/signup"
   }
 ];
 

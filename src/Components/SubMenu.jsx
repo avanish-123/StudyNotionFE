@@ -1,7 +1,11 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
 
 export default function SubMenu(props) {
-  function clickHandler(){
+  const navigate = useNavigate();
+  function clickHandler(ele){
+    console.log(ele.path)
+    navigate(ele.path)
   }
   const { data } = props;
   return (
@@ -9,7 +13,7 @@ export default function SubMenu(props) {
       <div className="p-4 text-richblack-800 z-[3]">
         {data.map((ele, index) => (
           <div
-            onClick={clickHandler}
+            onClick={()=>clickHandler(ele)}
             key={index}
             className="rounded-md text-sm hover:bg-pure-greys-600 hover:text-pure-greys-5 px-1"
           >
