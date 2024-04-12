@@ -4,6 +4,8 @@ import Home from "../Pages/Home";
 import Signup from "../Pages/Signup";
 import Signin from "../Pages/Signin";
 import { Navbar } from "../Components/Navbar";
+import { ForgotPassword } from "../Pages/ForgotPassword";
+import UpdatePassword from "../Pages/UpdatePassword";
 
 export default function Router() {
   return (
@@ -15,6 +17,8 @@ export default function Router() {
         <Route path={"/"} element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Signin />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/update-password/:token" element={<UpdatePassword />} />
       </Routes>
     </div>
   );

@@ -35,7 +35,6 @@ export const Navbar = () => {
   const getCategories = useCallback(async () => {
     try {
       const result = await apiConnector("GET", category.CATEGORY_API);
-      console.log(result.data);
       if (result?.data?.success === true) {
         setCourseCategories(result.data.data);
       }else{

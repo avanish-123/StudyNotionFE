@@ -21,7 +21,7 @@ export default function TextField(props) {
 
 
   return (
-    <div className="w-[100%]">
+    <div className="w-[100%] text-pure-greys-5">
       <div className="label text-sm">
         {label}
         {required && <span className="text-red-400 text-xs">*</span>}
