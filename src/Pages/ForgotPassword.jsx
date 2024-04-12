@@ -60,7 +60,7 @@ export const ForgotPassword = () => {
                 </div>
               </div>
             ) : (
-              <CustomButton width={"full"} label={"Resend Email"} />
+              <CustomButton width={"full"} onclick={submitHandler} label={"Resend Email"} />
             )}
           </div>
         </div>

@@ -10,6 +10,7 @@ export default function UpdatePassword() {
   const dispatch = useDispatch()
   const param = useParams()
   let token = param.token
+  console.log(token)
   const disabled =
     !state.newPassword ||
     !state.confirmNewPassword ||
@@ -23,9 +24,7 @@ export default function UpdatePassword() {
   }
 
   function clickHandler(){
-    console.log(state)
     dispatch(resetPassword(token, state))
-    
   }
   return (
     <div className="w-11/12 mx-auto text-pure-greys-5 h-[80vh] flex justify-center items-center">
