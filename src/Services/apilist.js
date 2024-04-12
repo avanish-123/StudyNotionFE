@@ -6,7 +6,7 @@ export const endpoints = {
     SIGNUP_API:'',
     LOGIN_API:'',
     RESETPASSWORDTOKEN_API:`${API_URL}/resetpasswordtoken`,
-    RESETPASSWORD_API:""
+    RESETPASSWORD_API:`${API_URL}/resetpassword`
 }
 export const category= {
     CATEGORY_API: `${API_URL}/getallcategories`
